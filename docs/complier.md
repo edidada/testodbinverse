@@ -3,19 +3,9 @@
 
 ```shell
 
-odb -d mysql --generate-query --generate-schema employee.hxx
+odb -d mysql --generate-schema --generate-query --generate-session --default-pointer std::tr1::shared_ptr employee.hxx
 
 ```
-
-
-
-not work
-```shell
-
-g++ -c person-odb.cxx c++ -DDATABASE_MYSQL -c driver.cxx c++ -o driver driver.o person-odb.o -lodb-mysql -lodb
-
-```
-
 
 ```shell
 
@@ -27,8 +17,11 @@ g++ -o driver driver.o person-odb.o -lodb-mysql -lodb
 
 ```shell
 scp person.sql root@60.205.225.118:~
+scp employee.sql root@60.205.225.118:~
+ssh root@60.205.225.118
 
 mysql --user=root --password=5Edidada --database=odb_test < person.sql
+mysql --user=root --password=5Edidada --database=odb_test < employee.sql
 
 ./driver --user root --password 5Edidada --database odb_test --host 60.205.225.118
 ```

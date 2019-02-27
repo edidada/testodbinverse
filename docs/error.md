@@ -60,3 +60,11 @@ gmake[1]: *** [CMakeFiles/testodbrelationship.dir/rule] 错误 2
 gmake: *** [testodbrelationship] 错误 2
 
 ```
+
+do this to resolve it
+
+```shell
+
+odb -d mysql --generate-schema --generate-query --generate-session --default-pointer std::tr1::shared_ptr employee.hxx
+
+```
