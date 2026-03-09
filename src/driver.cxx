@@ -8,7 +8,7 @@
 #include <odb/session.hxx>
 #include <odb/transaction.hxx>
 
-#include "database.hxx" // create_database
+#include "database.hxx"
 
 #include "employee.hxx"
 #include "employee-odb.hxx"
